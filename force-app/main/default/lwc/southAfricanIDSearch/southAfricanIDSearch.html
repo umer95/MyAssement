@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-box slds-theme_shade" style="width: 700px;">
+        <template lwc:if={showSpinner}>
+            <div class="slds-align--absolute-center">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:if={showErrorMsg}>
+            <div class="slds-text-color_error">{errorMsg}</div>
+        </template>
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-3">
+                <lightning-input type="text" name="SAID" maxlength="13" label="Enter your South African ID Number"
+                    onchange={southAfricaIDValueChange} required>
+                </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-var-m-top_large slds-var-p-right_medium">
+                    <lightning-button variant="brand" label="Search" title="Search" onclick={handleClick}
+                        disabled={disableSearchButton} class="slds-m-left_x-small">
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+
+        <template lwc:if={showHolidayTable}>
+            <div style="height:700px">
+                <lightning-datatable key-field="Id" hide-checkbox-column=true data={publicHolidaysData}
+                    columns={publicHolidaysColumns}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </div>
+</template>
