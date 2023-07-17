@@ -9,10 +9,6 @@ public with sharing class SouthAfricanIdSearchController {
         String countryCode = 'ZA';
         String responseFromCalendarific; 
         
-        //Upserting the record of Identification Detail based in the South African ID Number
-        //Identification Detail object store the information extracted from the South African ID Number(Date of Birth, Citizenship, Gender) and counter of Calendarific API calls
-        IdentificationDetailHelper.upsertRecordOfIdentificationDetail(southAfricanID, Date.newInstance(birthYear, birthMonth, birthDay), gender, citizenship);
-
         //Calling the Calendarific API using the Birth Year extracted from the South African ID Number and hard-coded country code
         responseFromCalendarific = CalendarificAPIHelper.sendGetRequestToCalendarificAPI(String.valueOf(birthYear), countryCode);
         //Typed-Parsing is used to parse the json so we have replaced the variable name 
@@ -43,6 +39,11 @@ public with sharing class SouthAfricanIdSearchController {
                 responseWrapper.publicHolidays.add(publicHolidayDetailsObj);
             }
         }
+        
+        //Upserting the record of  Identification Detail based in the South African ID Number
+        //Identification Detail object store the information extracted from the South African ID Number(Date of Birth, Citizenship, Gender) and counter of Calendarific API calls
+        IdentificationDetailHelper.upsertRecordOfIdentificationDetail(southAfricanID, Date.newInstance(birthYear, birthMonth, birthDay), gender, citizenship);
+        
         return responseWrapper;
     }
     
