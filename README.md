@@ -1,10 +1,8 @@
-# Salesforce DX Project: Next Steps
+# Salesforce DX Project
+This is a Salesforce-based project. You will need a Salesforce Dev Org to deploy these artifacts and test the LWC.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Deployemnt
+You can use VS Code to connect to a Salesforce org. Using the package.xml file in the Manifest folder to retrieve and deploy to the Salesforce Org.
 
 ## Configure Your Salesforce DX Project
 
