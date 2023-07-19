@@ -1,7 +1,7 @@
 # Salesforce DX Project
 This is a Salesforce-based project. You will need a Salesforce Dev Org to deploy these artifacts and test the LWC.
 
-## Deployemnt
+## Deployment
 You can use VS Code to connect to a Salesforce org. Using the package.xml file in the Manifest folder to retrieve and deploy to the Salesforce Org.
 
 ## Configure Your Salesforce DX Project
